@@ -15,41 +15,6 @@ import java.util.List;
  */
 public class Sort {
 
-    public void quickSort(ArrayList<Integer> array, int begin, int end){
-
-        if (begin >= end || array.size() < end)
-            return;
-
-        int pivot = array.get(begin);
-        int left = begin;
-        int right = end;
-
-        while(left < right){
-
-            //从右边开始找到比pivot大的数
-            while(left < right && array.get(right) >= pivot)
-                    right--;
-            if ( left < right )
-                array.set(left, array.get(right));
-
-            while (left < right && array.get(left) <= pivot)
-                 left--;
-            if (left < right)
-                array.set(right, array.get(left));
-        }
-
-        array.set(left, pivot);
-
-        quickSort(array, begin,left - 1);
-
-        quickSort(array, left + 1, end);
-
-    }
-
-
-
-
-
 
     public static void main(String[] args) {
 
